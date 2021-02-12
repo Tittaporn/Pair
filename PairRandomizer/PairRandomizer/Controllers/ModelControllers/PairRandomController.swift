@@ -9,12 +9,17 @@ import Foundation
 
 class PairRandomController {
     static let shared = PairRandomController()
-    var sections: [PairRandom] = []
+    var sections: [[Person]] = []
+   // var group: PairRandom =
     var peopleArray: [Person] = []
     
     func addNewPerson(name: String){
         let newPerson = Person(name: name)
         peopleArray.append(newPerson)
+        //saveToPersistence()
+        ramdomPeople()
+        //generateSection()
+        saveToPersistence()
     }
     
     func ramdomPeople() {
@@ -24,13 +29,50 @@ class PairRandomController {
 //        for section in 0...numberOfsections {
 //
 //        }
-        
         peopleArray.shuffle()
+        //generateSection()
+       
+        saveToPersistence()
     }
+    
+    
+    
+//    func generateSection() {
+//
+//    let numberOfsections = (peopleArray.count / 2) +
+//                (peopleArray.count % 2)
+//
+//        print("numberOfsections\(numberOfsections)")
+//
+//        for section in 0...numberOfsections {
+//            //var sections: [PairRandom] = []
+//
+//            var indexForPeopleArray = numberOfsections - 1
+//            let firstPerson = Person(name: peopleArray[indexForPeopleArray].name)
+//            indexForPeopleArray += 1
+//            let secondPerson = Person(name: peopleArray[indexForPeopleArray].name)
+//
+//            let newRandomPair = [firstPerson,secondPerson]
+//
+//
+//            sections.append(newRandomPair)
+//            print("section :: \(section)")
+//            indexForPeopleArray += 1
+//        }
+
+        // now 6 sections
+        // each section need 2 person from people Array
+//        for person in peopleArray {
+//
+//        }
+//
+                
+  //  }
     
     func deletePerson(person: Person) {
         guard let personToDelete = peopleArray.firstIndex(of: person) else {return}
         peopleArray.remove(at: personToDelete)
+        saveToPersistence()
     }
     
     

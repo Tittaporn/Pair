@@ -30,7 +30,10 @@ class PairRandomizerTableListViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+       
+        PairRandomController.shared.loadFromPersistance()
         tableView.reloadData()
+        
     }
     
     
@@ -41,7 +44,10 @@ class PairRandomizerTableListViewController: UIViewController {
     
     @IBAction func randomnizeButtonTapped(_ sender: Any) {
         //newPeopleArray = peopleArray.shuffled()
+        PairRandomController.shared.loadFromPersistance()
+
         PairRandomController.shared.ramdomPeople()
+        
         tableView.reloadData()
         
     }
@@ -75,10 +81,10 @@ class PairRandomizerTableListViewController: UIViewController {
 // MARK: - Extensions
 extension PairRandomizerTableListViewController: UITableViewDelegate, UITableViewDataSource {
     
-    //    func numberOfSections(in tableView: UITableView) -> Int {
-    //        return
-    //            // groupArray.count
-    //    }
+        func numberOfSections(in tableView: UITableView) -> Int {
+            return 1 //PairRandomController.shared.peopleArray.count
+                // groupArray.count
+        }
     
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

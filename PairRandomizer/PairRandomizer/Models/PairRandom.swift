@@ -27,7 +27,6 @@ class PairRandom: Codable {
     }
 }
 
-
 extension PairRandom: Equatable {
     static func == (lhs: PairRandom, rhs: PairRandom) -> Bool {
         return lhs.people == rhs.people
