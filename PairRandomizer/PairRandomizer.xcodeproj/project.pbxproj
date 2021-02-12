@@ -15,6 +15,8 @@
 		3643777A25D6E1B20096B43F /* PairRandomizerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3643777925D6E1B20096B43F /* PairRandomizerTests.swift */; };
 		3643778525D6E1B20096B43F /* PairRandomizerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3643778425D6E1B20096B43F /* PairRandomizerUITests.swift */; };
 		364377A925D6E5CB0096B43F /* PairRandomizerTableListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 364377A825D6E5CB0096B43F /* PairRandomizerTableListViewController.swift */; };
+		36A6142B25D6FA4E00125EA1 /* PairRandom.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36A6142A25D6FA4E00125EA1 /* PairRandom.swift */; };
+		36A6143025D6FE5200125EA1 /* PairRandomController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36A6142F25D6FE5200125EA1 /* PairRandomController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +51,8 @@
 		3643778425D6E1B20096B43F /* PairRandomizerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PairRandomizerUITests.swift; sourceTree = "<group>"; };
 		3643778625D6E1B20096B43F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		364377A825D6E5CB0096B43F /* PairRandomizerTableListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PairRandomizerTableListViewController.swift; sourceTree = "<group>"; };
+		36A6142A25D6FA4E00125EA1 /* PairRandom.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PairRandom.swift; sourceTree = "<group>"; };
+		36A6142F25D6FE5200125EA1 /* PairRandomController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PairRandomController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -148,6 +152,7 @@
 		364377A025D6E2E00096B43F /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				36A6142A25D6FA4E00125EA1 /* PairRandom.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -156,7 +161,6 @@
 			isa = PBXGroup;
 			children = (
 				3643779C25D6E2980096B43F /* storyboards */,
-				364377A825D6E5CB0096B43F /* PairRandomizerTableListViewController.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -173,6 +177,7 @@
 		364377A325D6E3010096B43F /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				364377A825D6E5CB0096B43F /* PairRandomizerTableListViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -180,6 +185,7 @@
 		364377A425D6E3090096B43F /* ModelControllers */ = {
 			isa = PBXGroup;
 			children = (
+				36A6142F25D6FE5200125EA1 /* PairRandomController.swift */,
 			);
 			path = ModelControllers;
 			sourceTree = "<group>";
@@ -314,8 +320,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				36A6142B25D6FA4E00125EA1 /* PairRandom.swift in Sources */,
 				364377A925D6E5CB0096B43F /* PairRandomizerTableListViewController.swift in Sources */,
 				3643776325D6E1B10096B43F /* AppDelegate.swift in Sources */,
+				36A6143025D6FE5200125EA1 /* PairRandomController.swift in Sources */,
 				3643776525D6E1B10096B43F /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
