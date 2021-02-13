@@ -22,6 +22,7 @@ class PairRandomizerTableListViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         PairRandomController.shared.loadFromPersistance()
+        PairRandomController.shared.generatePairForEachGroup(peopleArray: PairRandomController.shared.peopleArray)
         tableView.reloadData()
     }
     
@@ -32,6 +33,7 @@ class PairRandomizerTableListViewController: UIViewController {
     @IBAction func randomnizeButtonTapped(_ sender: Any) {
         PairRandomController.shared.loadFromPersistance()
         PairRandomController.shared.ramdomPeople()
+      // PairRandomController.shared.generatePairForEachGroup()
         tableView.reloadData()
     }
     
@@ -58,34 +60,39 @@ class PairRandomizerTableListViewController: UIViewController {
 // MARK: - Extensions
 extension PairRandomizerTableListViewController: UITableViewDelegate, UITableViewDataSource {
     
-
+    
+    func numberOfSections(in tableView: UITableView) -> Int {
+        // return 1
+      return PairRandomController.shared.sections.count
+            }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return PairRandomController.shared.peopleArray.count
+        // return PairRandomController.shared.peopleArray.count
+      return PairRandomController.shared.sections[section].count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "personRandomCell", for: indexPath)
-        let personInCell = PairRandomController.shared.peopleArray[indexPath.row]
+        
+        //  let personInCell = PairRandomController.shared.peopleArray[indexPath.row]
+
+       let personInCell = PairRandomController.shared.sections[indexPath.section][indexPath.row]
         cell.textLabel?.text = personInCell.name
         return cell
     }
-}
 
-/* NOTE To continue to work on section.
+
+
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
-            let personToDelete = PairRandomController.shared.peopleArray[indexPath.row]
+            // let personToDelete = PairRandomController.shared.peopleArray[indexPath.row]
+           let personToDelete = PairRandomController.shared.sections[indexPath.section][indexPath.row]
             PairRandomController.shared.deletePerson(person: personToDelete)
             self.tableView.deleteRows(at: [indexPath], with: .fade)
         }
     }
 
-    func numberOfSections(in tableView: UITableView) -> Int {
-                let numberOfsections = (PairRandomController.shared.peopleArray.count / 2) + (PairRandomController.shared.peopleArray.count % 2)
-                return numberOfsections
-            }
         
             func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
                    return "Group \(section + 1)"
@@ -94,5 +101,3 @@ extension PairRandomizerTableListViewController: UITableViewDelegate, UITableVie
 }
 
 
-________________________________________________________________________________
- */

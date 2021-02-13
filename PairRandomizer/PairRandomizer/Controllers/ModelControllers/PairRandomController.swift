@@ -17,30 +17,60 @@ class PairRandomController {
     // MARK: - CRUD Methods
     // CREATE
     func addNewPerson(name: String){
-            let newPerson = Person(name: name)
-            peopleArray.append(newPerson)
-            ramdomPeople()
-            saveToPersistence()
-        }
-
+        let newPerson = Person(name: name)
+        peopleArray.append(newPerson)
+        //ramdomPeople()
+        generatePairForEachGroup(peopleArray: peopleArray) 
+        saveToPersistence()
+    }
     
     // UPDATE
     func ramdomPeople() {
-          peopleArray.shuffle()
-          saveToPersistence()
-      }
+        peopleArray.shuffle()
+        saveToPersistence()
+    }
+    
+    func generatePairForEachGroup(peopleArray: [Person]) {
+        var newGroup: [Person] = []
+        if peopleArray.count % 2 != 0 {
+            for people in peopleArray {
+                if newGroup.count < 2 {
+                    newGroup.append(people)
+                } else {
+                    sections.append(newGroup)
+                    newGroup = []
+                    newGroup.append(people)
+                }
+            }
+            if let people = peopleArray.last {
+                let lastPerson = [people]
+                sections.append(lastPerson)
+            }
+        } else {
+            for people in peopleArray {
+                if newGroup.count < 2 {
+                    newGroup.append(people)
+                    if let people = peopleArray.last {
+                        if newGroup.contains(people) {
+                            sections.append(newGroup)
+                        }
+                    }
+                } else {
+                    sections.append(newGroup)
+                    newGroup = []
+                    newGroup.append(people)
+                }
+            }
+        }
+    }
     
     // DELETE
     func deletePerson(person: Person) {
-          guard let personToDelete = peopleArray.firstIndex(of: person) else {return}
-          peopleArray.remove(at: personToDelete)
-          saveToPersistence()
-      }
-
-  
-    
-    
-  
+        guard let personToDelete = peopleArray.firstIndex(of: person) else {return}
+        peopleArray.remove(at: personToDelete)
+        generatePairForEachGroup(peopleArray: peopleArray)
+        saveToPersistence()
+    }
     
     
     // MARK: - Persistence
@@ -76,39 +106,39 @@ class PairRandomController {
 
 /* NOTE Continue to work on sections per group
  
-
-  //    func generateSection() {
-  //
-  //    let numberOfsections = (peopleArray.count / 2) +
-  //                (peopleArray.count % 2)
-  //
-  //        print("numberOfsections\(numberOfsections)")
-  //
-  //        for section in 0...numberOfsections {
-  //            //var sections: [PairRandom] = []
-  //
-  //            var indexForPeopleArray = numberOfsections - 1
-  //            let firstPerson = Person(name: peopleArray[indexForPeopleArray].name)
-  //            indexForPeopleArray += 1
-  //            let secondPerson = Person(name: peopleArray[indexForPeopleArray].name)
-  //
-  //            let newRandomPair = [firstPerson,secondPerson]
-  //
-  //
-  //            sections.append(newRandomPair)
-  //            print("section :: \(section)")
-  //            indexForPeopleArray += 1
-  //        }
-  
-  // now 6 sections
-  // each section need 2 person from people Array
-  //        for person in peopleArray {
-  //
-  //        }
-  //
-  
-  //  }
-  
+ 
+ //    func generateSection() {
+ //
+ //    let numberOfsections = (peopleArray.count / 2) +
+ //                (peopleArray.count % 2)
+ //
+ //        print("numberOfsections\(numberOfsections)")
+ //
+ //        for section in 0...numberOfsections {
+ //            //var sections: [PairRandom] = []
+ //
+ //            var indexForPeopleArray = numberOfsections - 1
+ //            let firstPerson = Person(name: peopleArray[indexForPeopleArray].name)
+ //            indexForPeopleArray += 1
+ //            let secondPerson = Person(name: peopleArray[indexForPeopleArray].name)
+ //
+ //            let newRandomPair = [firstPerson,secondPerson]
+ //
+ //
+ //            sections.append(newRandomPair)
+ //            print("section :: \(section)")
+ //            indexForPeopleArray += 1
+ //        }
+ 
+ // now 6 sections
+ // each section need 2 person from people Array
+ //        for person in peopleArray {
+ //
+ //        }
+ //
+ 
+ //  }
+ 
  //______________________________________________________________________________________
  
  */
