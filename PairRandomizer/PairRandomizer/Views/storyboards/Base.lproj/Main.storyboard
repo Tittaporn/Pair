@@ -17,57 +17,66 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsMultipleSelection="YES" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="avP-Qz-Qo3">
-                                <rect key="frame" x="0.0" y="88" width="414" height="694"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <rect key="frame" x="0.0" y="88" width="414" height="683"/>
+                                <color key="backgroundColor" red="0.97645002599999997" green="0.80448681119999998" blue="0.58766716720000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="sectionIndexBackgroundColor" red="0.97645002599999997" green="0.80448681119999998" blue="0.58766716720000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="personRandomCell" textLabel="h8S-Px-XhC" style="IBUITableViewCellStyleDefault" id="9nQ-zt-ijg">
-                                        <rect key="frame" x="0.0" y="28" width="414" height="43.5"/>
+                                        <rect key="frame" x="0.0" y="28" width="414" height="53.5"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="9nQ-zt-ijg" id="XJ0-KK-Noy">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="53.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="h8S-Px-XhC">
-                                                    <rect key="frame" x="20" y="0.0" width="374" height="43.5"/>
+                                                    <rect key="frame" x="20" y="0.0" width="374" height="53.5"/>
                                                     <autoresizingMask key="autoresizingMask"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
+                                                    <fontDescription key="fontDescription" name="AppleColorEmoji" family="Apple Color Emoji" pointSize="17"/>
+                                                    <color key="textColor" red="0.43178629880000002" green="0.29962623119999998" blue="0.25601780410000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <color key="highlightedColor" red="0.52941176469999995" green="0.30980392159999998" blue="0.12941176469999999" alpha="1" colorSpace="calibratedRGB"/>
                                                 </label>
                                             </subviews>
+                                            <color key="backgroundColor" red="0.97645002599999997" green="0.80448681119999998" blue="0.58766716720000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </tableViewCellContentView>
+                                        <color key="backgroundColor" red="0.97645002599999997" green="0.80448681119999998" blue="0.58766716720000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="d0L-1c-8xH">
-                                <rect key="frame" x="103.5" y="802" width="207" height="30"/>
-                                <state key="normal" title="Randomize"/>
+                                <rect key="frame" x="62" y="791" width="290" height="41"/>
+                                <color key="backgroundColor" systemColor="systemOrangeColor"/>
+                                <fontDescription key="fontDescription" name="AppleColorEmoji" family="Apple Color Emoji" pointSize="20"/>
+                                <state key="normal" title="Randomize">
+                                    <color key="titleColor" red="0.43178629880000002" green="0.29962623119999998" blue="0.25601780410000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
                                 <connections>
                                     <action selector="randomnizeButtonTapped:" destination="pn3-Mp-6ls" eventType="touchUpInside" id="LeL-r4-bZf"/>
                                 </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="U3j-xJ-vJV"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" red="0.97645002599999997" green="0.80448681119999998" blue="0.58766716720000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="avP-Qz-Qo3" firstAttribute="width" secondItem="Gbe-sO-qrh" secondAttribute="width" id="1Bj-f9-iXM"/>
                             <constraint firstItem="d0L-1c-8xH" firstAttribute="centerX" secondItem="U3j-xJ-vJV" secondAttribute="centerX" id="53O-eB-qjD"/>
                             <constraint firstItem="avP-Qz-Qo3" firstAttribute="top" secondItem="U3j-xJ-vJV" secondAttribute="top" id="GnH-r2-m84"/>
                             <constraint firstItem="avP-Qz-Qo3" firstAttribute="leading" secondItem="U3j-xJ-vJV" secondAttribute="leading" id="LZW-uw-VKN"/>
                             <constraint firstItem="U3j-xJ-vJV" firstAttribute="bottom" secondItem="d0L-1c-8xH" secondAttribute="bottom" constant="30" id="Ldr-r3-1kv"/>
-                            <constraint firstItem="d0L-1c-8xH" firstAttribute="width" secondItem="Gbe-sO-qrh" secondAttribute="width" multiplier="0.5" id="NKZ-9e-ZBG"/>
+                            <constraint firstItem="d0L-1c-8xH" firstAttribute="width" secondItem="Gbe-sO-qrh" secondAttribute="width" multiplier="0.7" id="NKZ-9e-ZBG"/>
                             <constraint firstItem="d0L-1c-8xH" firstAttribute="top" secondItem="avP-Qz-Qo3" secondAttribute="bottom" constant="20" id="aNT-hJ-7tB"/>
                             <constraint firstItem="U3j-xJ-vJV" firstAttribute="trailing" secondItem="avP-Qz-Qo3" secondAttribute="trailing" id="c5S-Rq-i1z"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Pair Randomizer" id="1Ns-to-t4Z">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="nw4-re-wez">
+                            <color key="tintColor" red="0.43178629880000002" green="0.29962623119999998" blue="0.25601780410000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <connections>
                                 <action selector="addButtonTapped:" destination="pn3-Mp-6ls" id="mAJ-IJ-vVz"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="randomizerButton" destination="d0L-1c-8xH" id="iT2-th-XDR"/>
                         <outlet property="tableView" destination="avP-Qz-Qo3" id="gGg-QZ-CPi"/>
                     </connections>
                 </viewController>
@@ -83,6 +92,17 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="WQz-Eb-m3f">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" red="0.43178629880000002" green="0.29962623119999998" blue="0.25601780410000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="tintColor" red="0.43178629880000002" green="0.29962623119999998" blue="0.25601780410000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="barTintColor" red="0.87859946489999996" green="0.67058753969999996" blue="0.35720410940000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <textAttributes key="titleTextAttributes">
+                            <fontDescription key="fontDescription" name="AppleColorEmoji" family="Apple Color Emoji" pointSize="24"/>
+                            <color key="textColor" red="0.43178629880000002" green="0.29962623119999998" blue="0.25601780410000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <color key="textShadowColor" red="1" green="0.1460953904" blue="0.059214734839999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        </textAttributes>
+                        <textAttributes key="largeTitleTextAttributes">
+                            <color key="textColor" red="0.43178629880000002" green="0.29962623119999998" blue="0.25601780410000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        </textAttributes>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
@@ -95,8 +115,8 @@
         </scene>
     </scenes>
     <resources>
-        <systemColor name="systemBackgroundColor">
-            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        <systemColor name="systemOrangeColor">
+            <color red="1" green="0.58431372549019611" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

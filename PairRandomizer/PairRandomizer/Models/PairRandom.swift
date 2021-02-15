@@ -19,16 +19,3 @@ extension Person: Equatable {
         return lhs.name == rhs.name
     }
 }
-
-class PairRandom: Codable {
-    var people: [Person]
-    init(people: [Person]) {
-        self.people = people
-    }
-}
-
-extension PairRandom: Equatable {
-    static func == (lhs: PairRandom, rhs: PairRandom) -> Bool {
-        return lhs.people == rhs.people
-    }
-}
